@@ -3,8 +3,10 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:tdd_demo/entities/user.dart';
+import 'package:tdd_demo/repository/local_user_repository.dart';
 
 import 'package:tdd_demo/repository/user_repository.dart';
+import 'package:tdd_demo/repository_interface/i_user_repository.dart';
 
 import 'user_repository_test.mocks.dart';
 
@@ -57,5 +59,14 @@ void main() {
     User? user = await UserRepository(dio: dio).getUser(23);
 
     expect(user, isNull);
+  });
+
+  test('Get Local User Repository (sukses)', () async {
+    LocalUserRepository userRepository = LocalUserRepository();
+
+    User? user = await userRepository.getUser(12);
+
+    expect(userRepository, isA<IUserRepository>());
+    expect(user?.id, equals(12));
   });
 }

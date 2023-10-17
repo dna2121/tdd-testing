@@ -1,14 +1,16 @@
 import 'package:dio/dio.dart';
+import 'package:tdd_demo/repository_interface/i_user_repository.dart';
 
 import '../entities/user.dart';
 
-class UserRepository {
+class UserRepository implements IUserRepository {
   late Dio dio;
 
   UserRepository({Dio? dio}) {
     this.dio = dio ?? Dio();
   }
 
+  @override
   Future<User?> getUser(int id) async {
     try {
       var response = await dio.get('https://reqres.in/api/users/$id');
