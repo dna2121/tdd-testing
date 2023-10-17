@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:tdd_demo/user.dart';
+import 'package:tdd_demo/entities/user.dart';
 
 void main() {
   group('Default User Test', () {

@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:tdd_demo/user.dart';
+
+import '../entities/user.dart';
 
 class UserRepository {
   late Dio dio;

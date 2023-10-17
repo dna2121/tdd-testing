@@ -2,8 +2,9 @@ import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:tdd_demo/user.dart';
-import 'package:tdd_demo/user_repository.dart';
+import 'package:tdd_demo/entities/user.dart';
+
+import 'package:tdd_demo/repository/user_repository.dart';
 
 import 'user_repository_test.mocks.dart';
 
